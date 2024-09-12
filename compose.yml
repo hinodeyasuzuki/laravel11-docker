@@ -6,7 +6,7 @@ services:
       - .:/var/www/html
       - ./docker/php/laravel11.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
-         - 80:80
+         - 8000:80
     depends_on:
         - db
 
