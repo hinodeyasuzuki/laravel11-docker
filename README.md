@@ -4,7 +4,11 @@
 docker compose up -d
 ```
 
-./src/pulic is web root folder. You need to create.
+- ./src/pulic : web root folder out of container. 
+- /var/www : bash root of php container.
+- /var/www/html : web access root of php container.
+
+create ./src/public/index.html file and access
 ```
 http://localhost:8000
 ```
@@ -17,15 +21,15 @@ in case of session error
 
 ```
 docker compose exec php bash
-chmod 777 -R phpmyadmin
+chmod 777 -R html/phpmyadmin
 ```
 
 
 ## install laravel
 
-
 ```
 docker compose exec php bash
+cd html
 composer create-project laravel/laravel src
 chmod 777 -R src
 cd src
